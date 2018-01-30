@@ -3,7 +3,7 @@
 ## Avatar
 
 - Avatar erstellen
-- Aktiven Avatar auswählen
+- Aktiven Avatar auswählen ?
 - Attribute des Avatars bearbeiten
 
 ## Duell
@@ -15,7 +15,7 @@
 
 
 
-# DuelUi
+# DuelUi - Generiert Angular CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
