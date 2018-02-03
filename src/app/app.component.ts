@@ -13,7 +13,10 @@ export class AppComponent {
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() {
+    this.submitted = true;
+    //TODO: Daten laden
+  }
 
   model = new User('');
 }
