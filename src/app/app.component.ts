@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {User} from "./user";
 
 @Component({
   selector: 'app-root',
@@ -11,12 +10,7 @@ export class AppComponent {
 
   constructor() { }
 
-  submitted = false;
 
-  onSubmit() {
-    this.submitted = true;
-    //TODO: Daten laden
-  }
 
-  model = new User('');
+
 }

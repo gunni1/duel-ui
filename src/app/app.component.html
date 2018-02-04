@@ -1,18 +1,4 @@
-<div style="text-align:center">
-  <div class="container">
-    <form #userForm="ngForm" (submit)="onSubmit()">
-      <div class="form-group">
-        <label for="userName">Benutzer eingeben</label>
-        <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="model.userName" #userName="ngModel" required>
-        <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
-          Bitte Namen angeben!
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Los</button>
-    </form>
-  </div>
-</div>
+<app-login></app-login>
 <app-list-avatars></app-list-avatars>
 <app-messages></app-messages>
 
