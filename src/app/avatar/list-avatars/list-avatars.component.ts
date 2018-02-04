@@ -15,7 +15,7 @@ export class ListAvatarsComponent implements OnInit {
   //onChange für Userobjekt zum Re-Initialisieren
 
   getAvatars() {
-    this.avatars = this.avatarService.getAvatars();
+    this.avatarService.getAvatars().subscribe(avatars => this.avatars = avatars);
   }
 
   avatars: Avatar[]
