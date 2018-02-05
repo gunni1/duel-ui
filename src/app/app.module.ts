@@ -12,14 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-const appRoutes: Routes =  [
-  {path: 'login', component: LoginComponent},
-  {path: 'avatars', component: ListAvatarsComponent},
-  {path: 'avatar/:id', component: AvatarDetailComponent},
-  {path: '', redirectTo: '/login'},
-  {path: '**', component: PageNotFoundComponent}
-  ]
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,9 +24,7 @@ const appRoutes: Routes =  [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes, {enableTracing: true}
-    )
+    AppRoutingModule
   ],
   providers: [AvatarService, MessageService],
   bootstrap: [AppComponent]
