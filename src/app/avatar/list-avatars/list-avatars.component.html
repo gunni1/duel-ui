@@ -1,6 +1,6 @@
 <ul class="avatars">
   <li *ngFor="let avatar of avatars" (click)="onSelect(avatar)" [class.selected]="avatar === selectedAvatar">
-    <span class="badge">{{avatar.id}}</span> {{avatar.name}}
+    <span class="badge">{{avatar.avatarId}}</span> {{avatar.name}}
   </li>
 </ul>
 <app-avatar-detail [avatar]="selectedAvatar"></app-avatar-detail>

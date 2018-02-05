@@ -10,7 +10,7 @@ const appRoutes: Routes =  [
   {path: 'login', component: LoginComponent},
   {path: 'avatars', component: ListAvatarsComponent},
   {path: 'avatar/:id', component: AvatarDetailComponent},
-  //{path: '', redirectTo: '/login'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   //{path: '**', component: PageNotFoundComponent}
 ];
 

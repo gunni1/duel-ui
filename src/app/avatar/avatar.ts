@@ -1,6 +1,6 @@
 export class Avatar {
   constructor(
-    public id: string,
+    public avatarId: string,
     public name: string,
     public str: number,
     public agi: number,

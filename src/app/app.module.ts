@@ -13,12 +13,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListAvatarsComponent, //TODO: Raus wenn Routing eingebaut?
-    AvatarDetailComponent, MessagesComponent, LoginComponent, PageNotFoundComponent
+    AvatarDetailComponent, MessagesComponent, LoginComponent, PageNotFoundComponent, DashboardComponent
   ],
   imports: [
     BrowserModule,

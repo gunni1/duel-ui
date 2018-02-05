@@ -18,11 +18,18 @@ export class AvatarService {
 
   getAvatars(): Observable<Avatar[]> {
 
+    return of([
+      {name: "enrico", avatarId: "1", str: 1, agi:1, end:1,dex:1,perc:1},
+      {name: "jochen", avatarId: "2", str: 2, agi:2, end:2,dex:2,perc:2},
+      {name: "peter", avatarId: "3", str: 3, agi:3, end:3,dex:3,perc:3},
+    ])
+    /**
     return this.http.get<Avatar[]>(this.avatarsUrl)
       .pipe(
         tap(avatars => this.log("avatars fetched")),
         catchError(this.handleError("getAvatars", []))
     )
+     */
   }
 
   private log(message: string) {
