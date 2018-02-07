@@ -5,12 +5,15 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {ListAvatarsComponent} from "./avatar/list-avatars/list-avatars.component";
 import {LoginComponent} from "./login/login.component";
 import {RouterModule, Routes} from "@angular/router";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const appRoutes: Routes =  [
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'avatars', component: ListAvatarsComponent},
   {path: 'avatar/:id', component: AvatarDetailComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'avatar/:id/dashboard', component: DashboardComponent},
+
   //{path: '**', component: PageNotFoundComponent}
 ];
 

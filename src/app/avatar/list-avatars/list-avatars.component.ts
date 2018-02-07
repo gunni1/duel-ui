@@ -26,7 +26,4 @@ export class ListAvatarsComponent implements OnInit {
     this.getAvatars();
   }
 
-  onSelect(avatar: Avatar) {
-    this.selectedAvatar = avatar;
-  }
 }

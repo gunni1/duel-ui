@@ -12,6 +12,15 @@
 - Duellgegner herausfordern
 - Duell visualisieren
 
+# Navigation
+
+Login 
+  ->  Avatarauswahl 
+    -> Avatar erstellen
+          -> Dashboard
+    -> Dashboard
+      ...
+    
 
 
 

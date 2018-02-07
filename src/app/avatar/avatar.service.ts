@@ -16,13 +16,15 @@ export class AvatarService {
 
   private avatarsUrl = "http://localhost:9000/avatars/1";
 
+  AVATARS: Avatar[] = [
+    {name: "enrico", avatarId: "1", str: 1, agi:1, end:1,dex:1,perc:1},
+    {name: "jochen", avatarId: "2", str: 2, agi:2, end:2,dex:2,perc:2},
+    {name: "peter", avatarId: "3", str: 3, agi:3, end:3,dex:3,perc:3}];
+
+
   getAvatars(): Observable<Avatar[]> {
 
-    return of([
-      {name: "enrico", avatarId: "1", str: 1, agi:1, end:1,dex:1,perc:1},
-      {name: "jochen", avatarId: "2", str: 2, agi:2, end:2,dex:2,perc:2},
-      {name: "peter", avatarId: "3", str: 3, agi:3, end:3,dex:3,perc:3},
-    ])
+    return of(this.AVATARS)
     /**
     return this.http.get<Avatar[]>(this.avatarsUrl)
       .pipe(
@@ -30,6 +32,15 @@ export class AvatarService {
         catchError(this.handleError("getAvatars", []))
     )
      */
+  }
+
+  /**
+   * Liefert einen bestimmten Avatar identifiziert durch eine avatarId.
+   * @param {string} avatarId
+   */
+  getAvatar(avatarId: string | null) {
+    this.log("AvatarService: avatar fetched id: ${avatarId}`")
+    return of(this.AVATARS.find(avatar => avatar.avatarId === avatarId))
   }
 
   private log(message: string) {
@@ -55,5 +66,6 @@ export class AvatarService {
       return of(result as T);
     };
   }
+
 
 }

@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Avatar} from "../avatar";
+import {ActivatedRoute} from "@angular/router";
+import {AvatarService} from "../avatar.service";
 
 @Component({
   selector: 'app-avatar-detail',
@@ -8,7 +10,9 @@ import {Avatar} from "../avatar";
 })
 export class AvatarDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+  ) { }
 
   @Input() avatar: Avatar
 
