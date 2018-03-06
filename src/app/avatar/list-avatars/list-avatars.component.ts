@@ -14,8 +14,8 @@ export class ListAvatarsComponent implements OnInit {
   //Bekommt ein User-Objekt, läd Daten vom Server und zeigt sie an
   //onChange für Userobjekt zum Re-Initialisieren
 
-  getAvatars() {
-    this.avatarService.getAvatars().subscribe(avatars => this.avatars = avatars);
+  getAvatars(userId: string) {
+    this.avatarService.getAvatars(userId).subscribe(avatars => this.avatars = avatars);
   }
 
   avatars: Avatar[]
@@ -23,7 +23,9 @@ export class ListAvatarsComponent implements OnInit {
   selectedAvatar: Avatar;
 
   ngOnInit() {
-    this.getAvatars();
+    //TODO: Muss aus der Session geholt werden
+    const userId:string = "1";
+    this.getAvatars(userId);
   }
 
 }

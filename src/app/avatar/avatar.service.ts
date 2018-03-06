@@ -14,7 +14,7 @@ export class AvatarService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  private avatarsUrl = "http://localhost:9000/avatars/1";
+  private avatarServiceUrl = "http://localhost:9000";
 
   AVATARS: Avatar[] = [
     {name: "enrico", avatarId: "1", str: 1, agi:1, end:1,dex:1,perc:1},
@@ -22,25 +22,32 @@ export class AvatarService {
     {name: "peter", avatarId: "3", str: 3, agi:3, end:3,dex:3,perc:3}];
 
 
-  getAvatars(): Observable<Avatar[]> {
+  /**
+   * Liefert alle Avatare eines bestimmten Users identifiziert durch eine UserId.
+   * @param {string} userId
+   * @returns {Observable<Avatar[]>}
+   */
+  getAvatars(userId: string): Observable<Avatar[]> {
 
-    return of(this.AVATARS)
-    /**
-    return this.http.get<Avatar[]>(this.avatarsUrl)
+    const url = `${this.avatarServiceUrl}/avatars/${userId}`;
+    return this.http.get<Avatar[]>(url)
       .pipe(
         tap(avatars => this.log("avatars fetched")),
-        catchError(this.handleError("getAvatars", []))
+        catchError(this.handleError(url, []))
     )
-     */
   }
 
   /**
    * Liefert einen bestimmten Avatar identifiziert durch eine avatarId.
    * @param {string} avatarId
    */
-  getAvatar(avatarId: string | null) {
-    this.log("AvatarService: avatar fetched id: ${avatarId}`")
-    return of(this.AVATARS.find(avatar => avatar.avatarId === avatarId))
+  getAvatar(avatarId: string) {
+    const url = `${this.avatarServiceUrl}/avatar/${avatarId}`;
+    return this.http.get<Avatar[]>(url)
+      .pipe(
+        tap(avatars => this.log("avatar fetched with id: ${avatarId}")),
+        catchError(this.handleError(url, []))
+      )
   }
 
   private log(message: string) {
