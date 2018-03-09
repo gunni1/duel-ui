@@ -41,12 +41,12 @@ export class AvatarService {
    * Liefert einen bestimmten Avatar identifiziert durch eine avatarId.
    * @param {string} avatarId
    */
-  getAvatar(avatarId: string) {
+  getAvatar(avatarId: string): Observable<Avatar> {
     const url = `${this.avatarServiceUrl}/avatar/${avatarId}`;
-    return this.http.get<Avatar[]>(url)
+    return this.http.get<Avatar>(url)
       .pipe(
-        tap(avatars => this.log("avatar fetched with id: ${avatarId}")),
-        catchError(this.handleError(url, []))
+        tap(avatar => this.log("avatar fetched with id: ${avatarId}")),
+        catchError(this.handleError<Avatar>(`getAvatar with id: ${avatarId}`))
       )
   }
 

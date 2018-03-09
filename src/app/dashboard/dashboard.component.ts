@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
     private location: Location
     ) { }
 
-    avatar: Avatar
+    selectedAvatar: Avatar
 
   ngOnInit() {
     this.getAvatar()
@@ -25,6 +25,6 @@ export class DashboardComponent implements OnInit {
 
   private getAvatar() {
     const avatarId = this.route.snapshot.paramMap.get('avatarId')
-    this.avatarService.getAvatar(avatarId).subscribe(avatar => this.avatar)
+    this.avatarService.getAvatar(avatarId).subscribe(avatar => this.selectedAvatar = avatar)
   }
 }

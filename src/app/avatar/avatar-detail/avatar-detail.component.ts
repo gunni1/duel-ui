@@ -14,7 +14,8 @@ export class AvatarDetailComponent implements OnInit {
 
   ) { }
 
-  @Input() avatar: Avatar
+  @Input()
+  avatar: Avatar;
 
   ngOnInit() {
   }
